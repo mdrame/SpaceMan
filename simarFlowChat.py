@@ -4,7 +4,7 @@ from random import choice
 
 
 
-#, "rat", "dog", "lap", "sat" # reserve words
+#"rat", "dog", "lap", "sat" # reserve words
 
 listt = ["cat"]
 
@@ -31,6 +31,8 @@ def useInput_secretWord_list():
     is_guess_in_word(secret_letters_list,user_guess_letter)
     #print(secret_letters_list) # <!--- Test --->
 
+    return user_guess_letter
+
 
 
 
@@ -39,25 +41,40 @@ def is_guess_in_word(secret_letter_list, user_guessed_letter):
 
         if user_guessed_letter in secret_letter_list:
             print(f"Letter  {user_guessed_letter} is in listt {secret_letter_list}")
-            get_guessed_word(user_guessed_word,secret_letters_list)
+            blank = list() #printing "_" for the length of secret_word
+            count = 0
+
+            for i in secret_letter_list:
+                if i in  user_guessed_letter:
+                    blank.append(i)
+                else:
+                    blank.append("")
+
+            print(blank)
             return True
-        else:
+        elif user_guessed_letter not in secret_letter_list:
             print(f"Letter  {user_guessed_letter} is not in listt {secret_letter_list}")
+            wrong_guess_word()
             return False
 
 
 
 
-def get_guessed_word(user_guessed_letter, secret_word_list):
 
-        blank = ["-"]*len(secret_letters_list) #printing "_" for the length of secret_word
-        print(blank)
-        #for i in range(len(user_guessed_letter)):
-        user_guess_letter_turn_into_a_word = "cat" # need a right location
-        #user_guess_letter_turn_into_a_word += user_guessed_letter +  " "
-        print(user_guess_letter_turn_into_a_word)
-        useInput_secretWord_list()
-        is_guess_in_word(secret_letters_list, user_guessed_word)
+def wrong_guess_word():
+
+    blank = ["-"]*len(secret_letters_list) #printing "_" for the length of secret_word
+    print(blank)
+    #for i in range(len(user_guessed_letter)):
+    #user_guess_letter_turn_into_a_word = "cat" # need a right location
+    #user_guess_letter_turn_into_a_word += user_guessed_letter +  " "
+    #print(user_guess_letter_turn_into_a_word)
+    useInput_secretWord_list()
+    is_guess_in_word(secret_letters_list, user_guessed_word)
+
+
+def guess_complete():
+    pass
 
 
 
