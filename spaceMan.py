@@ -30,14 +30,13 @@ def is_word_guessed(secret_word, letters_guessed):
     # TODO: Loop through the letters in the secret_word and check
 
     #if a letter is not in lettersGuessed
-    for word in secret_word:
-        if word in letters_guessed:
-            print(f"{word} is part of {letter_guessed}")
-            return True
-        else:
-            print(f"{word} is not part of { letter_guessed}")
-            return False
-
+    for letter in secret_word:
+         # if the letter is not in the list of letters_guessed
+         if letter not in letters_guessed:
+             # return False and check again
+             return False # run false  if all the guess letters combine are not in the secret word
+    return True # return true if the guess letters word is == to secret word
+    
 def get_guessed_word(secret_word, letters_guessed):
     '''
     A function that is used to get a string showing the letters guessed so far
@@ -78,11 +77,10 @@ def is_guess_in_word(guess, secret_word):
     '''
     #TODO: check if the letter guess is in the secret word
     # Needs more work ( logic seems off)
-    for letter in secret_word:
-        if letter_guessed in letter:
-             return True
-        else:
-            return False
+    if guess in secret_word:
+        return True
+    else:
+        return False
 
 
 
