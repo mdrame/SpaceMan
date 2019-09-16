@@ -93,7 +93,7 @@ def spaceman(secret_word):
 
     chances = 7
     letters_guessed = []
-    print(secret_word) #uncomment this to see secret word as you play.
+    #print(secret_word) #uncomment this to see secret word as you play.
 
     #TODO: show the player information about the game according to the project spec
     print(f'''
@@ -127,12 +127,12 @@ def spaceman(secret_word):
             get_guessed_word(secret_word, letters_guessed)
 
         elif is_guess_in_word(guess, secret_word) is False:
-            if guess != "": # making sure the input is a strig
-                print(" Please enter a letter not a number")
-            else:
-                chances = chances - 1
-                print(f'''Sorry letter "{guess}" is not in the word! You have  {(chances)} chances left''')
-                get_guessed_word(secret_word, letters_guessed)
+            print(f"Sorry {guess} is not in the word")
+
+        else:
+            chances = chances - 1
+            print(f'''Sorry letter "{guess}" is not in the word! You have  {(chances)} chances left''')
+            get_guessed_word(secret_word, letters_guessed)
 
 
     #TODO: check if the game has been won or lost
