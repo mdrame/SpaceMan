@@ -143,6 +143,10 @@ def spaceman(secret_word):
         print(f"Congratulation 🥳. YOU WON.")
 
 
+
+def test_is_ok():
+    assert is_guess_in_word("i","inn") == True
+
 #These function calls that will start the game
-secret_word = load_word()
-spaceman(secret_word)
+# secret_word = load_word()
+# spaceman(secret_word)
