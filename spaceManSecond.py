@@ -65,7 +65,7 @@ def get_guessed_word(secret_word, letters_guessed):
                 letterWord += (letter + " ")
             else:
                 letterWord += ("_ ")
-    return print(letterWord)
+    return letterWord
 
 
 def is_guess_in_word(guess, secret_word):
@@ -144,24 +144,12 @@ def spaceman(secret_word):
 
 
 
-
-def test_is_word_gussed():
-    assert is_word_guessed("man", "man") == True # assert works only is both words is the same
-
-def test_simply():
-    assert 2 + 3 == 5, "Houston we've got a problem"
-
-
-def test_is_ok():
-    assert is_guess_in_word("i","inn") == True # the leter gotto be with in the secret word before function pytest runs successful
-
-
-
-
-
-
-
-
 #These function calls that will start the game
-# secret_word = load_word()
-# spaceman(secret_word)
+secret_word = load_word()
+spaceman(secret_word)
+
+
+
+
+
+# #These function calls that will start the game
